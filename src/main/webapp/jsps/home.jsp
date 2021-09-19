@@ -21,15 +21,15 @@
 		Bangalore,
 		devopsmadeeasy@outlook.com
 		<br>
-		<a href="mailto:devopsmadeeasy@outlook.com">Mail to Posh Technologies</a>
+		<a href="mailto:devopsmadeeasy@outlook.com">Mail to DevOps Made Easy</a>
 	</span>
 </div>
 <hr>
 	<p> Service : <a href="services/employee/getEmployeeDetails">Get Employee Details </p>
 <hr>
 <hr>
-<p align=center>Posh Technologies - Outsourcing, Consulting, Services, Product development.</p>
-<p align=center><small>Copyrights 2021 by <a href="http://devopsmadeeasy.com/">Posh Technologies</a> </small></p>
+<p align=center>DevOps Made Easy - Training, Consulting, Services, Product development.</p>
+<p align=center><small>Copyrights 2021 by <a href="http://devopsmadeeasy.com/">DevOps Made Easy</a> </small></p>
 
 </body>
 </html>
