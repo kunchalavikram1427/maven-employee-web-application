@@ -89,13 +89,13 @@
 	<distributionManagement>
 		<repository>
 			<id>nexus</id>
-			<name>devopsmadeeasy Release Nexus Repository</name>
+			<name>DevOpsMadeEasy Release Nexus Repository</name>
 			<url>http://8.8.8.8:8081/repository/devopsmadeeasy-release/</url>
 		</repository>
 
 		<snapshotRepository>
 			<id>nexus</id>
-			<name>devopsmadeeasy Snapshot Nexus Repository</name>
+			<name>DevOpsMadeEasy Repository Snapshot Nexus Repository</name>
 			<url>http://8.8.8.8:8081/repository/devopsmadeeasy-snapshot/</url>
 		</snapshotRepository>
 	</distributionManagement>  
