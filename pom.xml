@@ -81,7 +81,7 @@
 	</dependencies>
 	<repositories>
 	    <repository>
-	      <id>nexus-group</id>
+	      <id>central</id>
 	      <url>${nexus.host.url}/repository/nexus-group/</url>
 	    </repository>
 	</repositories>
