@@ -79,7 +79,12 @@
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
-
+	<repositories>
+	    <repository>
+	      <id>nexus-group</id>
+	      <url>${nexus.host.url}/repository/nexus-group/</url>
+	    </repository>
+	</repositories>
 	<distributionManagement>
 		<repository>
 			<id>nexus</id>
