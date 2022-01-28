@@ -33,6 +33,7 @@
 			<groupId>com.devopsmadeeasy</groupId>
 			<artifactId>devopsmadeeasy</artifactId>
 			<version>4.0</version>
+			<packaging>war</packaging>
 		</dependency>
 		<dependency>
 			<groupId>org.json</groupId>
