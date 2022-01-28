@@ -2,9 +2,8 @@
 maven-employee-web-application
 
 ### References
-
-> https://maven.apache.org/pom.html
-> https://maven.apache.org/settings.html
+ - https://maven.apache.org/pom.html
+ - https://maven.apache.org/settings.html
 
 ### How to build
 
