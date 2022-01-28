@@ -83,12 +83,12 @@
 		<repository>
 			<id>nexus</id>
 			<name>Nexus Release Repository</name>
-			<url>${nexus.host.url}/repository/devopsmadeeasy-release/</url>
+			<url>${nexus.host.url}/repository/nexus-release/</url>
 		</repository>
 		<snapshotRepository>
 			<id>nexus</id>
 			<name>Nexus Snapshot Repository</name>
-			<url>${nexus.host.url}/repository/devopsmadeeasy-snapshot/</url>
+			<url>${nexus.host.url}/repository/nexus-snapshot/</url>
 		</snapshotRepository>
 	</distributionManagement>  
 
