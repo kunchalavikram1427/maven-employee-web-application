@@ -18,6 +18,7 @@
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
 		<nexus.host.url>http://3.108.64.15:8081</nexus.host.url>
+		<tomcat.host.url>http://3.112.3.66:9090</tomcat.host.url>
 		<sonar.host.url>http://0.0.0.0:9000</sonar.host.url>
 		<sonar.login>YOUR-TOKEN-GOES-HERE</sonar.login>
 		<!--
@@ -124,6 +125,16 @@
 					<downloadJavadocs>true</downloadJavadocs>
 					<wtpversion>2.0</wtpversion>
 					<wtpContextName>devopsmadeeasy</wtpContextName>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<url>${tomcat.host.url}/manager/text</url>
+					<server>TomcatAppServer</server>
+					<path>/myapp</path>
 				</configuration>
 			</plugin>
 		</plugins>
