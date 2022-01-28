@@ -85,7 +85,7 @@
 	      <url>${nexus.host.url}/repository/nexus-group/</url>
 	    </repository>
 	</repositories>
-<!-- 	<distributionManagement>
+	<distributionManagement>
 		<repository>
 			<id>nexus</id>
 			<name>Nexus Release Repository</name>
@@ -96,7 +96,7 @@
 			<name>Nexus Snapshot Repository</name>
 			<url>${nexus.host.url}/repository/nexus-snapshot/</url>
 		</snapshotRepository>
-	</distributionManagement>   -->
+	</distributionManagement>  
 
 	<build>
 		<finalName>employee-application</finalName>
