@@ -10,5 +10,5 @@ maven-employee-web-application
 ```sh
 docker build --build-arg git_url=https://github.com/kunchalavikram1427/maven-employee-web-application.git --build-arg project_name=maven-employee-web-application  --build-arg artifact_id=employee -t employee:4.0 .
 ```
-### Authors
+### Author
 - Vikram K (www.youtube.com/c/devopsmadeeasy)
