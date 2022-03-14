@@ -1,3 +1,4 @@
+[![Build Status](http://3.110.171.101:8080/buildStatus/icon?job=Build+Status)](http://3.110.171.101:8080/job/Build%20Status/)
 #  Sample Maven Application: maven-employee-web-application
 maven-employee-web-application
 
