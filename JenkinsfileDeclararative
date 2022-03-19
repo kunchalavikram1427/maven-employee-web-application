@@ -1,0 +1,41 @@
+pipeline{
+agent any
+tools{
+    maven 'maven3.8.4'
+} 
+options {
+  timestamps()
+  buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')
+}
+    stages{
+        
+        stage('gitcheckoutcode'){
+          steps{
+              git branch: 'development', credentialsId: '8eafc813-44a7-4f04-8b8f-aa6f1a3b4123', url: 'https://github.com/SUDHANSU-088/maven-employee-web-application.git'
+          }
+        }
+        stage('Buildmaven'){
+          steps{
+              sh "mvn clean package "
+          }  
+        }
+        stage('codeQualityMannagementSonarQube'){
+            steps{
+              sh "mvn sonar:sonar"
+            }
+        }
+        stage('upload to ArtifactRepo'){
+            steps{
+              sh "mvn deploy"
+            }
+        }
+        stage('Deployto tomcat'){
+            steps{
+            sshagent(['35995341-da3c-45bc-bf22-c1eab36ddc16']) {
+        sh "scp -o StrictHostKeyChecking=no target/employee-application.war ec2-user@52.66.146.36:/opt/apache-tomcat-9.0.60/webapps"
+            }
+        }
+        }    
+                
+    }//stages flowerbracket
+}//pipeline
