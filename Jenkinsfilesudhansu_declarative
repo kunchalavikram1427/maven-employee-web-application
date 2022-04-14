@@ -1,0 +1,76 @@
+pipeline{
+    agent any
+    tools{
+        maven 'maven3.8.5'
+    }
+    
+       triggers {
+  pollSCM ('* * * * *')
+}
+options {
+  buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')
+  timestamps( )
+}
+    
+    stages{
+      
+      stage('gitCheckout'){
+        steps{
+            git branch: 'development', credentialsId: '37b2c0d3-9f8f-48b3-ab22-f0726e809947', url: 'https://github.com/SUDHANSU-088/maven-employee-web-application.git'
+        }
+      }
+       
+      stage('Build'){
+          steps{
+              sh "mvn clean package"
+          }
+     }
+
+      stage('codeQualitySonarQube'){
+         steps{
+             sh "mvn sonar:sonar"
+         }
+      }
+      stage('nexusRepository'){
+          steps{
+              sh "mvn deploy"
+          }
+      }
+
+      stage('deploymentTomcat'){
+          steps{
+              sshagent(['51b26e4c-0f8e-4591-a201-1ca540e080bb']) {
+        sh "scp -o StrictHostKeyChecking=no target/*.war ec2-user@3.111.23.192:/opt/apache-tomcat-9.0.62/webapps/"
+}
+          }
+      } 
+
+    }
+    
+    post {
+  always {
+    emailext body: '''Build over
+
+regards
+sudhansu kumar khandual''', subject: 'Build over', to: 'sudhansukhandual940@gmail.com'
+  }
+  aborted {
+    emailext body: '''Build aborted
+
+regards
+sudhansu kumar khandual''', subject: 'Build over', to: 'sudhansukhandual940@gmail.com'
+  }
+  success {
+    emailext body: '''Build success
+
+regards
+sudhansu kumar khandual''', subject: 'Build over', to: 'sudhansukhandual940@gmail.com'
+  }
+  failure {
+   emailext body: '''Build failure
+
+regards
+sudhansu kumar khandual''', subject: 'Build over', to: 'sudhansukhandual940@gmail.com'
+  }
+}
+}
