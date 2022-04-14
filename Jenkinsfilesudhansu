@@ -1,0 +1,35 @@
+node
+{
+    def mavenHome = tool name: "maven3.8.5"
+
+    properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([pollSCM('* * * * *')])])
+    
+    stage('Checkout'){
+        git branch: 'development', credentialsId: '37b2c0d3-9f8f-48b3-ab22-f0726e809947', url: 'https://github.com/SUDHANSU-088/maven-employee-web-application.git'
+    }
+    
+    stage('Build'){
+        sh "${mavenHome}/bin/mvn clean package"
+    }
+    
+    stage('SonarQubeRepiort'){
+        sh "${mavenHome}/bin/mvn sonar:sonar"
+    }
+    
+    stage('ArtifactRepositoryNexus'){
+        sh "${mavenHome}/bin/mvn deploy"
+    }
+
+    stage('DeployApplnTomcat'){
+        sshagent(['51b26e4c-0f8e-4591-a201-1ca540e080bb']) {
+        sh "scp -o StrictHostKeyChecking=no target/*.war ec2-user@3.111.23.192:/opt/apache-tomcat-9.0.62/webapps/"
+}
+    }
+    stage('sendEmailnotification'){
+        emailext body: '''Build over
+
+Regards
+sudhansu kumar khandual
+7077650414''', subject: 'Build over', to: 'sudhansukhandual@gmail.com'
+    }
+}
