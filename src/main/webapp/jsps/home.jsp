@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1 align="center">Welcome! to DevOps Made Easy Training ....</h1>
-<h1 align="center"> DevOps Made Easy Pvt Ltd is a Outsourcing, Consulting, Service, and Product Development</h1>
+<h1 align="center"> DevOps sudhansu kumar khandual is a Outsourcing, Consulting, Service, and Product Development</h1>
 <hr>
 <div style="text-align: center;">
 	<!-- span>
