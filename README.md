@@ -35,4 +35,4 @@ EXPOSE 8080
 - Vikram K (www.youtube.com/c/devopsmadeeasy)
 
 ### Original Author
-- Unknown as I have cloned this repository long back and updating/using ever since. All credits to the original author. If you are the original author, kindly contact me on kunchalavikram1427@gmail.com If you are concerned about using the source...
+- Unknown as I have cloned this repository long back and updating/using ever since. All credits to the original author. If you are the original author, kindly contact me on kunchalavikram1427@gmail.com If you are concerned about using the source.
