@@ -17,7 +17,7 @@
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-		<nexus.host.url>http://3.108.64.15:8081</nexus.host.url>
+		<nexus.host.url>http://13.233.164.126:8081</nexus.host.url>
 		<tomcat.host.url>http://3.109.186.189:8080</tomcat.host.url>
 		<sonar.host.url>http://0.0.0.0:9000</sonar.host.url>
 		<sonar.login>YOUR-TOKEN-GOES-HERE</sonar.login>
@@ -88,19 +88,19 @@
 	<repositories>
 	    <repository>
 	      <id>nexus</id>
-	      <url>${nexus.host.url}/repository/nexus-group/</url>
+	      <url>${nexus.host.url}/repository/maven_group/</url>
 	    </repository>
 	</repositories>
 	<distributionManagement>
 		<repository>
 			<id>nexus</id>
 			<name>Nexus Release Repository</name>
-			<url>${nexus.host.url}/repository/nexus-release/</url>
+			<url>${nexus.host.url}/repository/maven_release/</url>
 		</repository>
 		<snapshotRepository>
 			<id>nexus</id>
 			<name>Nexus Snapshot Repository</name>
-			<url>${nexus.host.url}/repository/nexus-snapshot/</url>
+			<url>${nexus.host.url}/repository/maven_snapshot/</url>
 		</snapshotRepository>
 	</distributionManagement>  
 
