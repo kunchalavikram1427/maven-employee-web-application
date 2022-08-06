@@ -29,7 +29,12 @@
 
 	</properties>
 	<dependencies>
-<!-- 		<dependency>
+		<dependency>
+		    <groupId>org.fusesource.mqtt-client</groupId>
+		    <artifactId>mqtt-client</artifactId>
+		    <version>1.16</version>
+		</dependency>
+		<dependency>
 			<groupId>com.devopsmadeeasy</groupId>
 			<artifactId>devopsmadeeasy</artifactId>
 			<version>4.0</version>
