@@ -3,7 +3,7 @@
 	<groupId>com.devopsmadeeasy</groupId>
 	<artifactId>devopsmadeeasy</artifactId>
 	<packaging>war</packaging>
-	<version>99</version>
+	<version>5.0-SNAPSHOT</version>
 
 	<name>devops</name>
 	<description>Maven Web App for Java Projects</description>
@@ -17,7 +17,7 @@
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-		<nexus.host.url>http://13.233.164.126:8081</nexus.host.url>
+		<nexus.host.url>http://13.235.243.233:8081</nexus.host.url>
 		<tomcat.host.url>http://3.109.186.189:8080</tomcat.host.url>
 		<sonar.host.url>http://0.0.0.0:9000</sonar.host.url>
 		<sonar.login>YOUR-TOKEN-GOES-HERE</sonar.login>
@@ -88,19 +88,19 @@
 	<repositories>
 	    <repository>
 	      <id>nexus</id>
-	      <url>${nexus.host.url}/repository/maven_group/</url>
+	      <url>${nexus.host.url}/repository/maven-group/</url>
 	    </repository>
 	</repositories>
 	<distributionManagement>
 		<repository>
 			<id>nexus</id>
 			<name>Nexus Release Repository</name>
-			<url>${nexus.host.url}/repository/maven_release/</url>
+			<url>${nexus.host.url}/repository/maven-release-hosted/</url>
 		</repository>
 		<snapshotRepository>
 			<id>nexus</id>
 			<name>Nexus Snapshot Repository</name>
-			<url>${nexus.host.url}/repository/maven_snapshot/</url>
+			<url>${nexus.host.url}/repository/maven-snapshot-hosted/</url>
 		</snapshotRepository>
 	</distributionManagement>  
 
