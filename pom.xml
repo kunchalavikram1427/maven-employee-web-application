@@ -3,7 +3,7 @@
 	<groupId>com.devopsmadeeasy</groupId>
 	<artifactId>devopsmadeeasy</artifactId>
 	<packaging>war</packaging>
-	<version>27.2</version>
+	<version>10.2</version>
 
 	<name>devops</name>
 	<description>Maven Web App for Java Projects</description>
