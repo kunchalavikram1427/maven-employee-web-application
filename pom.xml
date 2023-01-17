@@ -20,7 +20,7 @@
 		<nexus.host.url>http://3.110.177.71:1999/lokeshreddy</nexus.host.url>
 		<tomcat.host.url>http://172.31.32.229:9182</tomcat.host.url>
 		<sonar.host.url>http://172.31.2.189/lokeshreddy</sonar.host.url>
-		<sonar.login>squ_8136cdc3c227e470816a612b07c0ba8d17b6031a </sonar.login>
+		<sonar.login>squ_8136cdc3c227e470816a612b07c0ba8d17b6031a</sonar.login>
 		<!--
 		<sonar.login>USERNAME</sonar.login>
 		<sonar.password>PASSWORD</sonar.password> -->
