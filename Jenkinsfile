@@ -32,7 +32,7 @@
                 sh "mvn clean test"
                 },
                 Build:{
-                    sh "echo The person name is : ${PersonName}"
+                    sh "echo The person name is: $PersonName"
                     sh "mvn clean package"
                 }
             )
