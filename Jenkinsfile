@@ -2,7 +2,7 @@
      agent any
      
      tools {
-         maven 'maven.3.8.6'
+         maven 'maven3.8.7'
      }
      options {
   buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')
