@@ -99,7 +99,7 @@
 		<snapshotRepository>
 			<id>nexus</id>
 			<name>Nexus Snapshot Repository</name>
-			<url>http://13.232.226.18:1999/lokeshreddy/repository/citibank-nodejs/</url>
+			<url>http://13.232.226.18:1999/lokeshreddy/repository/citibank-snapshot/</url>
 		</snapshotRepository>
 	</distributionManagement>  
 
