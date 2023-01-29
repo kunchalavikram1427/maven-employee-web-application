@@ -1,0 +1,41 @@
+@Library('lokisharedlib') _
+node {
+        timestamps {
+    // some block
+}
+    def mavenHome = tool name: 'maven3.8.6' 
+
+    
+    try {
+        stage('checkoutcode'){
+            sendSlackNotifications('STARTED')
+        git branch: 'development', credentialsId: '9defc899-0bae-4e78-bd4b-27d2634ec54e', url: 'https://github.com/lokeshsgithub/maven-employee-web-application.git'
+    }
+    
+    stage('Build'){
+        sh "${mavenHome}/bin/mvn clean package"
+    }
+        
+        stage('executing the sonarqube report'){
+            sh "${mavenHome}/bin/mvn clean sonar:sonar"
+        }
+        
+        stage('uploading the artifacts into nexus'){
+            sh "${mavenHome}/bin/mvn clean deploy"
+        }
+        
+        stage('Deploy into app server'){
+            sshagent(['9712892e-2b89-4641-ad53-f83116c9e85c']) {
+                sh "scp -o stricthostkeychecking=no target/employee-application.war ec2-user@172.31.42.105:/opt/apache-tomcat-9.0.71/webapps"
+            }
+        }
+    }//try closed
+    
+    catch (e) {
+        currentBuild.result= "FAILURE"
+    }
+    finally{
+        sendSlackNotifications(currentBuild.result)
+    }
+    
+}//node closed
