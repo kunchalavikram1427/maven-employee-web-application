@@ -87,7 +87,7 @@
 	<repositories>
 	    <repository>
 	      <id>nexus</id>
-	      <url>${nexus.host.url}/repository/maven-group/</url>
+	      <url>${nexus.host.url}/repository/maven-internal-group/</url>
 	    </repository>
 	</repositories>
 	<distributionManagement>
