@@ -1,0 +1,17 @@
+// Building WAR file
+pipeline {
+    agent none
+    stages {
+        stage('Code Build') {
+            agent {
+                docker {
+                    label 'docker-slave01'
+                    image 'maven:3.8.3-adoptopenjdk-11'
+                }
+            }
+            steps {
+                sh "mvn clean package"
+            }
+        }
+    }
+}
