@@ -1,4 +1,4 @@
-# Sample Maven Application: maven-employee-web-application
+# Sample Maven Application: maven-employee-web-application.
 maven-employee-web-application.
 
 ### References
