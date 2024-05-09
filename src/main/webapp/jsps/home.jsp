@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1 align="center">Welcome to DevOps Class</h1>
-<h1 align="center"> Yahoo! is a Outsourcing, Consulting, Service, and Product Development Company</h1>
+<h1 align="center"> Wowww Yahoo! is a Outsourcing, Consulting, Service, and Product Development Company</h1>
 <hr>
 <div style="text-align: center;">
 	<!-- span>
