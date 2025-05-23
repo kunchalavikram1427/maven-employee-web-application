@@ -17,8 +17,14 @@ jobs:
         uses: actions/setup-java@v4
         with:
             distribution: 'temurin'
-            java-version: '8'
+            java-version: '11'
       - name: Check java & Maven version
         run: |
             java -version
             mvn --version
+      - name: Package application
+        run: |
+            mvn package
+      - name: List war files
+        run: |
+            ls -al ${{ github.workspace }}/target/*.war
