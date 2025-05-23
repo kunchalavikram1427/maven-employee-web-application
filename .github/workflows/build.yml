@@ -35,5 +35,5 @@ jobs:
           password: ${{ secrets.DOCKERHUB_PAT }}
       - name: Build with Dockerfile
         run: |
-            docker build -t ${{ vars.DOCKERHUB_USERNAME }}/maven-test:${{ github.run_id}}
+            docker build -t ${{ vars.DOCKERHUB_USERNAME }}/maven-test:${{ github.run_id}} .
             docker push ${{ vars.DOCKERHUB_USERNAME }}/maven-test:${{ github.run_id}}
