@@ -40,7 +40,5 @@ jobs:
             tags: v1, v2
             registry: docker.io
             dockerfile: Dockerfile
-            multiPlatform: true
-            platform: linux/amd64,linux/arm64,linux/arm/v7
             username: ${{ vars.DOCKERHUB_USERNAME }}
             password: ${{ secrets.DOCKERHUB_PAT }}
