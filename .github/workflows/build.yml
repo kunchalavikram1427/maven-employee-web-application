@@ -33,9 +33,9 @@ jobs:
         with:
           username: ${{ vars.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PAT }}
-      - uses: mr-smithers-excellent/docker-build-push@v6
-        name: Build & push Docker image
-          with:
+      - name: Build & push Docker image
+        uses: mr-smithers-excellent/docker-build-push@v6
+        with:
             image: kunchalavikram/mvn-test-image
             tags: v1, v2
             registry: docker.io
