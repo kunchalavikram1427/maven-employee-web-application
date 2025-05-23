@@ -33,7 +33,14 @@ jobs:
         with:
           username: ${{ vars.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PAT }}
-      - name: Build with Dockerfile
-        run: |
-            docker build -t ${{ vars.DOCKERHUB_USERNAME }}/maven-test:${{ github.run_id}} .
-            docker push ${{ vars.DOCKERHUB_USERNAME }}/maven-test:${{ github.run_id}}
+      - uses: mr-smithers-excellent/docker-build-push@v6
+          name: Build & push Docker image
+          with:
+            image: kunchalavikram/mvn-test-image
+            tags: v1, v2
+            registry: docker.io
+            dockerfile: Dockerfile
+            multiPlatform: true
+            platform: linux/amd64,linux/arm64,linux/arm/v7
+            username: ${{ vars.DOCKERHUB_USERNAME }}
+            password: ${{ secrets.DOCKERHUB_PAT }}
