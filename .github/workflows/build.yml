@@ -24,11 +24,28 @@ jobs:
       - name: List war files
         run: |
             ls -al ${{ github.workspace }}/target/*.war
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+          with:
+            name: application-war-file
+            path: target/*.war
+            if-no-files-found: 'error'
+            retention-days: 1 day
             
   containerize:
     runs-on: ubuntu-latest
     needs: build-war-file
     steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: Download Artifact
+        uses: actions/download-artifact@v4
+          with:
+            name: application-war-file
+            path: target
+      - name: List war file
+        run: |
+            ls -al ${{ github.workspace }}/target/*.war
       - name: Docker build
         run: |
             docker build -t test:1.0 .
