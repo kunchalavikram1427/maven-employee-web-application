@@ -1,5 +1,5 @@
 name: Containerize the java app
-run-name: ${{ github.actor }} is building java app 🚀
+run-name: ${{ github.actor }} is building java app in RUN_ID ${{ github.run_id }} & RUN_NUMBER ${{ github.run_number }}  🚀
 
 on: [push]
 
